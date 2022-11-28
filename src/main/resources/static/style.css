@@ -3,24 +3,16 @@
 	text-decoration: none;
 }
 
-.nav-link {
-	font-family: 'Roboto', sans-serif;
-	color: black;
-	font-size: 1.5em;
-	justify-content: flex-end;
-	margin-right: 15px;
+.main {
+	margin-top: 1.5em;
+	margin-left: 10%;
+	margin-right: 10%;
+	
+	font-size: 20px;
+	text-align: justify;
 }
 
-.buttons {
-	width: 8em;
-	height: auto;
-}
-
-label {
-	font-family: 'Roboto', sans-serif;
-	font-size: 1.5em;
-}
-
-nav {
-	background-color: rgb(223, 223, 223);/*ciza claro*/
+.clique-aqui {
+	margin-top: 1.5em;
+	text-align: center;
 }

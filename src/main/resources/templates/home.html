@@ -1,17 +1,30 @@
 <!doctype html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
-	<head th:replace="~{fragments :: head}">
-	</head>
-	
-	<body>
-		
-		<div th:replace="~{fragments :: navbar}"></div>
+<head th:replace="~{fragments :: head}">
+</head>
 
-		<div>
-		</div>		
+<body>
+
+	<div th:replace="~{fragments :: navbar}"></div>
+
+	<div class="main">
+		<p>
+			Você possui alguma dificuldade para realizar atividades do dia-a-dia que envolvam o computador, celular ou
+			internet?
+		</p>
+		<p>
+			Responda o questionário a seguir e nos deixe saber quais são suas dificuldades.
+			Essas informações podem ajudar a orientar os entes públicos no momento de definir onde investir os recursos públicos.
+		</p>
 		
-		<th:block th:include="~{fragments :: bootstrapscripts}"></th:block>
-	</body>
+		
+	</div>
+	<div class="clique-aqui">
+		<button type="button" class="btn btn-primary btn-lg btn-block">Clique aqui para começar</button>
+	</div>
+
+	<th:block th:include="~{fragments :: bootstrapscripts}"></th:block>
+</body>
 
 </html>
