@@ -10,45 +10,61 @@
 	
 		<div class="main">
 			<h1>Questionário</h1>
-			<p>
-				O seu problema é de qual natureza?
-			</p>
-			<p>
-				<ul>
-					<li>
-						Eu preciso fazer uma atividade mas não tenho os equipamentos necessários.<br>
-						Exemplo: Me falta um computador, uma impressora ou algo mais específico como uma impressora 3d.
-					</li>
-					<li>
-						Eu tenho o equipamento necessário para realizar meu trabalho mas me falta algum recurso estrutural.<br>
-						Exemplo:<br>
-						<ul>
-							<li>
-								Preciso de acesso à internet mas não tenho onde moro
-							</li>
-							<li>
-								Preciso de acesso à internet banda larga por qualquer motivo
-							</li>
-							<li>
-								Ou mesmo "não tenho acesso à energia elétrica"
-							</li>
-						</ul>
-					</li>
-					<li>
-						Eu tenho os recursos necessários à minha disposição mas me falta saber como utilizar essas ferramentas.
-					</li>
-					<li>
-						Duas ou três opções das opções anteriores.
-					</li>
-				</ul>
-			</p>
-			
-			
-		</div>
-		<div class="clique-aqui">
-			<button type="button" class="btn btn-primary btn-lg btn-block">Clique aqui para começar</button>
-		</div>
+			<form action="/questionario/1/resposta" method="post">
+				<p>
+					O seu problema é de qual natureza?
+				</p>
+				<p>
+					<ul>
+						<li>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="faltaRecurso" name="faltaRecurso">
+								<label class="form-check-label" for="faltaRecurso">
+									Eu preciso fazer uma atividade mas não tenho os equipamentos necessários.<br>
+									Exemplo: Me falta um computador, uma impressora ou algo mais específico como uma impressora 3d.
+								</label>
+							</div>
 	
+						</li>
+						<li>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="faltaEstrutura" name="faltaEstrutura">
+								<label class="form-check-label" for="faltaEstrutura">
+									Eu tenho o equipamento necessário para realizar meu trabalho mas me falta algum recurso estrutural.
+								</label>
+							</div>
+												
+							Exemplo:<br>
+							<ul>
+								<li>
+									Preciso de acesso à internet mas não tenho onde moro
+								</li>
+								<li>
+									Preciso de acesso à internet banda larga por qualquer motivo
+								</li>
+								<li>
+									Ou mesmo "não tenho acesso à energia elétrica"
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="faltaConhecimento" name="faltaConhecimento">
+								<label class="form-check-label" for="faltaConhecimento">
+									Eu tenho os recursos necessários à minha disposição mas me falta saber como utilizar essas ferramentas.
+								</label>
+							</div>
+						</li>
+					</ul>
+				</p>
+				
+				
+			</div>
+			<div class="clique-aqui">
+				<button type="submit" class="btn btn-primary btn-lg btn-block">Prosseguir</button>
+			</div>
+		</form>
+		
 		<th:block th:include="~{fragments :: bootstrapscripts}"></th:block>
 	</body>
 

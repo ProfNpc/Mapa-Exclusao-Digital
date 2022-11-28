@@ -12,6 +12,10 @@
 	text-align: justify;
 }
 
+.main ul {
+	list-style-type: none;
+}
+
 .clique-aqui {
 	margin-top: 1.5em;
 	text-align: center;
