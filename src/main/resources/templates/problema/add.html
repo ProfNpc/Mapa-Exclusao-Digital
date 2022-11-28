@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments :: head}">
+</head>
+
+<body>
+
+	<div th:replace="~{fragments :: navbar}"></div>
+
+	<form action="/problema/add" method="post">
+
+		<div class="main">
+			<h1>Problemas</h1>
+			<p>Para cada tipo de problema que você enfrenta, descreva a situação em detalhes</p>
+	
+			<ul>
+				<li th:each="tipo, iStat : ${tipos}">
+					<div class="form-group">
+						
+						<label th:text="${'Problema ' + iStat.count}"></label>
+						<br>
+						<input type="hidden" th:value="${tipo.id}" name="idTipo">
+						
+						<label for="tipo" class="form-label">Tipo:</label>
+						<input type="text" class="form-control" id="tipo" name="tipo" th:value="${tipo.titulo}">
+
+						<label for="descricao" class="form-label">Descrição:</label>
+						<textarea cols="30" rows="10" class="form-control" id="descricao" name="descricao"></textarea>
+						
+						<hr>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+		
+		<div class="clique-aqui">
+			<button type="submit" class="btn btn-primary btn-lg btn-block">Prosseguir</button>
+		</div>
+	
+	</form>
+
+
+	<th:block th:include="~{fragments :: bootstrapscripts}"></th:block>
+</body>
+
+</html>

@@ -8,26 +8,25 @@
 
 	<div th:replace="~{fragments :: navbar}"></div>
 
-	<div class="main">
-		<h1>Problemas</h1>
-		<form action="/problema/mais-detalhes" method="post">
+	<form action="/problema/add" method="post">
 
+		<div class="main">
+			<h1>Tipo de Problemas</h1>
+			
 			<ul>
 				<li th:each="prob : ${problemas}">
 					<div class="form-check">
-						<input class="form-check-input" type="checkbox" th:value="${prob.id}" th:id="${'p' + prob.id}" name="problemaList">
+						<input class="form-check-input" type="checkbox" th:value="${prob.id}" th:id="${'p' + prob.id}" name="tipoProblemaList">
 						<label class="form-check-label" th:for="${'p' + prob.id}" th:text="${prob.natureza + '/' + prob.titulo}">
 							Recurso/Não tenho blablabla
 						</label>
 					</div>
 				</li>
 			</ul>
-
-
-	</div>
-	<div class="clique-aqui">
-		<button type="submit" class="btn btn-primary btn-lg btn-block">Prosseguir</button>
-	</div>
+		</div>
+		<div class="clique-aqui">
+			<button type="submit" class="btn btn-primary btn-lg btn-block">Prosseguir</button>
+		</div>
 	</form>
 
 	<th:block th:include="~{fragments :: bootstrapscripts}"></th:block>

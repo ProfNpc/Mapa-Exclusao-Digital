@@ -61,7 +61,7 @@ public class QuestionarioController {
 		
 		model.addAttribute("problemas", problemas);
 		
-		return "problema/list";
+		return "questionario/list";
 	}
 
 	private boolean getCheckBoxValue(String checkboxValueStr) {
