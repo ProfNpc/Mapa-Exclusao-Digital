@@ -13,85 +13,12 @@
 		<form action="/problema/mais-detalhes" method="post">
 
 			<ul>
-				<li>
+				<li th:each="prob : ${problemas}">
 					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="1" id="p1" name="problemaList">
-						<label class="form-check-label" for="p1">
-							Recurso/Não tenho computador
+						<input class="form-check-input" type="checkbox" th:value="${prob.id}" th:id="${'p' + prob.id}" name="problemaList">
+						<label class="form-check-label" th:for="${'p' + prob.id}" th:text="${prob.natureza + '/' + prob.titulo}">
+							Recurso/Não tenho blablabla
 						</label>
-					</div>
-				</li>
-				<li>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="2" id="p2" name="problemaList">
-						<label class="form-check-label" for="p2">
-							Recurso/Preciso de um computador mais rápido
-						</label>
-					</div>
-				</li>
-				<li>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="3" id="p3" name="problemaList">
-						<label class="form-check-label" for="p3">
-							Recurso/Preciso de um computador com mais memória
-						</label>
-					</div>
-				</li>
-				<li>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="4" id="p4" name="problemaList">
-						<label class="form-check-label" for="p4">
-							Estrutura/Não tenho acesso à internet
-						</label>
-					</div>
-				</li>
-				<li>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="5" id="p5" name="problemaList">
-						<label class="form-check-label" for="p5">
-							Estrutura/Preciso de internet banda larga
-						</label>
-					</div>
-				</li>
-				<li>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="6" id="p6" name="problemaList">
-						<label class="form-check-label" for="p6">
-							Conhecimento/Preciso usar um programa mas não sei como fazê-lo.
-						</label>
-					</div>
-				</li>
-				<li>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="7" id="p7" name="problemaList">
-						<label class="form-check-label" for="p7">
-							Conhecimento/Minha impressora estava funcionando mas agora parou de funcionar.
-						</label>
-					</div>
-				</li>
-				<li>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="8" id="p8" name="problemaList">
-						<label class="form-check-label" for="p8">
-							Conhecimento/Como faço para enviar um e-mail?
-						</label>
-					</div>
-				</li>
-				<li>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="9" id="p9" name="problemaList">
-						<label class="form-check-label" for="p9">
-							Conhecimento/Como faço para pagar um boleto pelo aplicativo do meu banco?
-						</label>
-					</div>
-				</li>
-				<li>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="9" id="p9" name="problemaList">
-						<label class="form-check-label" for="p9">
-							Outro/Outra
-						</label>
-						<input class="form-control me-3" type="text" name="descricaoOutro">
 					</div>
 				</li>
 			</ul>
