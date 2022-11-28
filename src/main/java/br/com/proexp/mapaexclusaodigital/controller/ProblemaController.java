@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import br.com.proexp.mapaexclusaodigital.model.Problema;
+import br.com.proexp.mapaexclusaodigital.model.SaveProblemForm;
 import br.com.proexp.mapaexclusaodigital.model.TipoProblema;
+import br.com.proexp.mapaexclusaodigital.repository.ProblemaRepository;
 import br.com.proexp.mapaexclusaodigital.repository.TipoProblemaRepository;
 
 @Controller
@@ -20,6 +23,9 @@ public class ProblemaController {
 
 	@Autowired
 	private TipoProblemaRepository repository;
+	
+	@Autowired
+	private ProblemaRepository problemaRepository;
 	
 	@PostMapping("/add")
 	public String add(
@@ -44,6 +50,21 @@ public class ProblemaController {
 			}
 		}
 		return lista;
+	}
+	
+	@PostMapping("/save")
+	public String save(
+			Model model,
+			SaveProblemForm saveProblemForm ) {
+		
+		//Gera um ticket
+		List<Problema> problemas = saveProblemForm.getProblemas(this.repository);
+		
+		problemaRepository.saveAll(problemas);
+		
+		model.addAttribute("ticket", saveProblemForm.getTicket());
+		
+		return "problema/ticket";
 	}
 	
 }

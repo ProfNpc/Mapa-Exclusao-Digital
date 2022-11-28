@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments :: head}">
+</head>
+
+<body>
+
+	<div th:replace="~{fragments :: navbar}"></div>
+
+
+
+	<div class="main">
+		<h1>Problemas Salvos</h1>
+		
+		<p>Seus problemas foram registrados e farão parte de nossas relatórios.</p>
+		<p>O seu ticket é <span th:text="${ticket}"></span>.</p>
+	</div>
+
+
+	<th:block th:include="~{fragments :: bootstrapscripts}"></th:block>
+</body>
+
+</html>
