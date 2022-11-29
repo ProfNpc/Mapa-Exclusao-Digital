@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments :: head}">
+</head>
+
+<body>
+
+	
+	<script src="/mermaid.min.js"></script><!--
+	<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+-->
+	<div th:replace="~{fragments :: navbar}"></div>
+
+	<form action="/graficos/regiao" method="post">
+
+		<div class="main">
+			<h1>Problemas por Região</h1>
+			<pre class="mermaid">
+				pie showData
+				    title Problemas por Região
+				    "SP" : 30.00
+				    "RJ" : 20.00
+				    "MG" : 10.00
+				    "PE" : 10.00
+				    "ES" :  5.00
+				    "MT" :  5.00
+				    "MS" :  5.00
+				    "DF" :  5.00
+				    "Demais Estados" : 10.00
+				    
+			</pre>
+		</div>
+		<div class="clique-aqui">
+			<button type="submit" class="btn btn-primary btn-lg btn-block">Atualizar</button>
+		</div>
+	</form>
+
+	<script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+
+	<th:block th:include="~{fragments :: bootstrapscripts}"></th:block>
+</body>
+
+</html>

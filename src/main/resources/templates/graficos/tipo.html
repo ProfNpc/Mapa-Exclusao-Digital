@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments :: head}">
+</head>
+
+<body>
+
+	
+	<script src="/mermaid.min.js"></script><!--
+	<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+-->
+	<div th:replace="~{fragments :: navbar}"></div>
+
+	<form action="/graficos/regiao" method="post">
+
+		<div class="main">
+			<h1>Problemas por Tipo de Problema</h1>
+			<pre class="mermaid">
+				pie showData
+				    title Problemas por Tipo de Problema
+				    "Não tenho computador" : 40.00
+				    "Preciso de um computador mais rápido" : 20.00
+				    "Não tenho acesso à internet" : 10.00
+				    "Preciso de internet banda larga" : 10.00
+				    "Preciso usar um programa mas não sei como fazê-lo" :  5.00
+				    "Demais Problemas" : 15.00
+				    
+			</pre>
+		</div>
+		<div class="clique-aqui">
+			<button type="submit" class="btn btn-primary btn-lg btn-block">Atualizar</button>
+		</div>
+	</form>
+
+	<script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+
+	<th:block th:include="~{fragments :: bootstrapscripts}"></th:block>
+</body>
+
+</html>
